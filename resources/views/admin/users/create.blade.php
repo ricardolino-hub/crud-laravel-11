@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Usuário</title>
-</head>
-<body>
+@extends('admin.layouts.templatePages')
+@section('title', 'Novo Usuário')
+@section('content')
     <h1>Novo Usuário</h1>
     <form action="{{ route('users.store') }}" method="post">
         @csrf
@@ -14,5 +9,4 @@
         <input type="password" name="password" placeholder="Senha">
         <button type="submit">Criar</button>
     </form>
-</body>
-</html>
+@endsection
