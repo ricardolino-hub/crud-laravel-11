@@ -2,7 +2,13 @@
 @section('title', 'Lista de Usuários')
 @section('content')
 <h1>Usuários</h1>
+    
     <a href="{{ route('users.create') }}">Novo Usuário</a>
+
+    @if (session()->has('success'))
+        <p>{{ session('success') }}</p>
+    @endif
+
     <table>
         <thead>
             <tr>
