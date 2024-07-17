@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -37,13 +38,17 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         if (!$user = User::find($user->id)) {
             return back()->with('message', 'Usuário não encontrado');
         }
 
-        $user->update(request()->only(['name', 'email']));
+        $data = request()->only(['name', 'email']);
+        if ($request->password) {
+            $data['password'] = bcrypt($request->password);
+        }
+        $user->update($data);
 
         return redirect()
             ->route('users.index')
