@@ -6,10 +6,7 @@
     <x-alert/>
 
     <form action="{{ route('users.store') }}" method="post">
-        @csrf
-        <input type="text" name="name" placeholder="Nome" value="{{ old('name') }}">
-        <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}">
-        <input type="password" name="password" placeholder="Senha">
+        @include('admin.users.components.inputs')
         <button type="submit">Criar</button>
     </form>
 @endsection

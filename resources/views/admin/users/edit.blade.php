@@ -6,11 +6,8 @@
     <x-alert/>
 
     <form action="{{ route('users.update', $user->id) }}" method="post">
-        @csrf
         @method('put')
-        <input type="text" name="name" placeholder="Nome" value="{{ $user->name }}">
-        <input type="email" name="email" placeholder="E-mail" value="{{ $user->email }}">
-        <input type="password" name="password" placeholder="Senha">
+        @include('admin.users.components.inputs')
         <button type="submit">Editar</button>
     </form>
 @endsection
