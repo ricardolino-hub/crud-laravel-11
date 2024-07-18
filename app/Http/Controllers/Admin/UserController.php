@@ -54,4 +54,13 @@ class UserController extends Controller
             ->route('users.index')
             ->with('success', 'Usuário atualizado com sucesso!');
     }
+
+    public function show(string $id)
+    {
+        if (!$user = User::find($id)) {
+            return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
+        }
+
+        return view('admin.users.show', compact('user'));
+    }
 }
