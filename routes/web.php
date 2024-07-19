@@ -3,9 +3,10 @@
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckIfIsAdmin;
 
 Route::middleware('auth')->group(function () {
-    Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware(CheckIfIsAdmin::class);
     Route::get('/user/{user}', [UserController::class, 'show'])->name('users.show');
     Route::put('/user/{user}', [UserController::class, 'update'])->name('users.update');
     Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
