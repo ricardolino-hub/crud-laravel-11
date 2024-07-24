@@ -68,5 +68,24 @@ Rodar as migrations
 php artisan migrate
 ```
 
+Intalando o breeze (pacote que entrega autenticação de usuário)
+```sh
+composer require laravel/breeze --dev
+php artisan breeze:install
+```
+```sh
+php artisan breeze:install
+```
+
+Fora do container. Intalar todas as dependencias javascript do blade
+```sh
+npm install
+```
+```sh
+npm run build
+ou
+npm run dev
+```
+
 Acesse o projeto
 [http://localhost:8000](http://localhost:8000)
