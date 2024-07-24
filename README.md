@@ -71,7 +71,6 @@ php artisan migrate
 Intalando o breeze (pacote que entrega autenticação de usuário)
 ```sh
 composer require laravel/breeze --dev
-php artisan breeze:install
 ```
 ```sh
 php artisan breeze:install
@@ -83,7 +82,10 @@ npm install
 ```
 ```sh
 npm run build
+```
 ou
+```sh
+
 npm run dev
 ```
 
