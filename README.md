@@ -38,6 +38,11 @@ Mudar nome do user no Dockerfile
 user=nome_que_quiser
 ```
 
+Remover das variaveis de ambiente no docker-compose.yml
+```sh
+:-alguma_coisa
+```
+
 Suba os containers do projeto
 ```sh
 docker compose up -d
