@@ -29,6 +29,8 @@ DB_CONNECTION=banco_do_conatiner_que_subiu
 DB_HOST=nome_do_conatiner_de_banco_de_dados
 DB_USERNAME=nome_db
 DB_PASSWORD=senha_db
+SESSION_DRIVER=redis
+REDIS_HOST=redis
 ```
 
 Mudar nome do user no Dockerfile
